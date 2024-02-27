@@ -6,13 +6,18 @@ authors: [ StakeTheSteak ]
 description: C.L.A.W. (Collect, Locate, Annihilate, Win)
 website: https://summitmc.xyz/
 commands:
+  claw:
+    description: Root command for C.L.A.W.
+    Usage: /claw
+    permission-message: You do not have permission to use /claw.
+    permission: claw.claw
   open:
     description: Opens the menu GUI for C.L.A.W.
-    Usage: /[claw] <command>
+    Usage: /[claw] open
     permission-message: You do not have permission to use the /claw open command.
-    permission: claw.claw.gui
+    permission: claw.claw.open
   generate:
     description: Generates a challenge for the current in game day
-    Usage: /[claw] <command>
+    Usage: /[claw] generate
     permission-message: You do not have permission to use the /claw generate command.
     permission: claw.claw.generate

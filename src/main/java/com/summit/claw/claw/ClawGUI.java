@@ -17,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
 public class ClawGUI implements Listener {
-    private Inventory ClawGUI;
-    private Inventory inventory = ClawGUI;
+    private static Inventory ClawGUI;
+    private static Inventory inventory = ClawGUI;
 
     public void initializeItems() {
         // Consider slots like 4 for "Generate" and 8 for "Exit"
@@ -55,7 +55,7 @@ public class ClawGUI implements Listener {
     }
 
     // You can open the inventory with this
-    public void openInventory(final @NotNull HumanEntity ent) {
+    public static void openInventory(final @NotNull HumanEntity ent) {
         ent.openInventory(inventory);
     }
 
