@@ -1,7 +1,18 @@
-name: claw
+name: Claw
 version: '1.0-SNAPSHOT'
 main: com.summit.claw.claw.Claw
 api-version: '1.20'
 authors: [ StakeTheSteak ]
 description: C.L.A.W. (Collect, Locate, Annihilate, Win)
 website: https://summitmc.xyz/
+commands:
+  open:
+    description: Opens the menu GUI for C.L.A.W.
+    Usage: /[claw] <command>
+    permission-message: You do not have permission to use the /claw open command.
+    permission: claw.claw.gui
+  generate:
+    description: Generates a challenge for the current in game day
+    Usage: /[claw] <command>
+    permission-message: You do not have permission to use the /claw generate command.
+    permission: claw.claw.generate
