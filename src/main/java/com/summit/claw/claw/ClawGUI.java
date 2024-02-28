@@ -18,7 +18,8 @@ import java.util.Arrays;
 
 public class ClawGUI implements Listener {
     private static Inventory ClawGUI;
-    private static Inventory inventory = ClawGUI;
+    private static Inventory inventory = Bukkit.createInventory(null, 9, "C.L.A.W. GUI");
+
 
     public void initializeItems() {
         // Consider slots like 4 for "Generate" and 8 for "Exit"

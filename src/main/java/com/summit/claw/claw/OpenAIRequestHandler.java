@@ -34,7 +34,7 @@ public class OpenAIRequestHandler {
     }
 
     public static String generateChallenge() {
-        if (API_KEY == null || API_KEY.equals("defaultKey")) {
+        if (API_KEY == null || API_KEY.isEmpty() || API_KEY.equals("defaultKey")) {
             return "API Key not configured.";
         }
         JSONObject requestBody = getJsonObject();

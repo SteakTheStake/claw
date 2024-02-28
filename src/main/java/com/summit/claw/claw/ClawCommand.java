@@ -1,7 +1,6 @@
-package com.summit.claw.claw.commands;
+package com.summit.claw.claw;
 
 import com.summit.claw.claw.Claw;
-import com.summit.claw.claw.ClawGUI;
 import com.summit.claw.claw.OpenAIRequestHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,14 +11,12 @@ import org.jetbrains.annotations.NotNull;
 import static com.summit.claw.claw.ClawGUI.openInventory;
 
 public class ClawCommand implements CommandExecutor {
-    private final Claw plugin;
 
-    private ClawGUI clawGUI;
+    private final Claw plugin;
 
     // Assuming there's a constructor to pass the plugin instance, adjust as necessary.
     public ClawCommand(Claw plugin) {
         this.plugin = plugin;
-        this.clawGUI = new ClawGUI();
     }
 
     @Override
@@ -27,7 +24,7 @@ public class ClawCommand implements CommandExecutor {
         if (label.equalsIgnoreCase("claw")) {
             if (args.length == 0) {
                 // Handle the default command usage
-                sender.sendMessage("Usage: /claw generate");
+                sender.sendMessage("Usage: /claw generate or /claw open");
                 return true;
             } else if (args[0].equalsIgnoreCase("generate")) {
                 // Handle the /claw generate command
@@ -43,14 +40,12 @@ public class ClawCommand implements CommandExecutor {
     }
 
     public boolean generateChallenge(CommandSender sender) {
-        // Code to generate and send a challenge to the player
-        openInventory((Player) sender);
+        // Generate a challenge using the OpenAI API
+        String challenge = OpenAIRequestHandler.generateChallenge();
 
-        return true;
-    }
+        // Send the challenge to the player
+        sender.sendMessage("Challenge: " + challenge);
 
-    private boolean openGUI(CommandSender sender) {
-        // Code to open the GUI for the player
         return true;
     }
 
